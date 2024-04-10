@@ -59,7 +59,7 @@ outputs:
         - test ! -f "${PREFIX}/lib/pkgconfig/libxcrypt.pc"
         - test -f "${PREFIX}/lib/libcrypt.so.1"
 
-#  - name: libxcrypt
+  - name: libxcrypt
 
 about:
   home: https://github.com/besser82/libxcrypt
