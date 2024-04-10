@@ -70,6 +70,10 @@ about:
   summary: Extended crypt library for descrypt, md5crypt, bcrypt, and others
 
 extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/47182
+    reason: Dependency for systemd
   recipe-maintainers:
+    - ianaobi
     - chrisburr
     - mbargull
