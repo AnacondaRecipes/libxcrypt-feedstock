@@ -29,7 +29,8 @@ requirements:
 
 test:
   commands:
-    - test -f "${PREFIX}/include/crypt.h"
+    - echo $(ls "$PREFIX/include") && test -f "${PREFIX}/include/crypt.h"
+#    - test -f "${PREFIX}/include/crypt.h"
     - test -f "${PREFIX}/lib/libcrypt${SHLIB_EXT}"
     - test -f "${PREFIX}/lib/libcrypt.so.2"  # [not osx]
     - test -f "${PREFIX}/lib/libcrypt.2.dylib"  # [osx]
