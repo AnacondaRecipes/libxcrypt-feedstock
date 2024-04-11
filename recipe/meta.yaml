@@ -75,5 +75,6 @@ extra:
     reason: Dependency for systemd
   recipe-maintainers:
     - ianaobi
+    - bkreider
     - chrisburr
     - mbargull
