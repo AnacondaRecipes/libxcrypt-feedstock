@@ -24,8 +24,7 @@ requirements:
     - {{ compiler('c') }}
     - make
     - pkg-config
-    # We get perl from yum to avoid creating a dependency cycle
-    # - perl
+    - perl
 
 test:
   commands:
