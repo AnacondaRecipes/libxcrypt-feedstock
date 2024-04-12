@@ -24,12 +24,11 @@ requirements:
     - {{ compiler('c') }}
     - make
     - pkg-config
-    # We get perl from yum to avoid creating a dependency cycle
-    # - perl
+    - perl
 
 test:
   commands:
-    - test -f "${PREFIX}/include/crypt.h"
+    - echo $(ls "$PREFIX/include") && test -f "${PREFIX}/include/crypt.h"
     - test -f "${PREFIX}/lib/libcrypt${SHLIB_EXT}"
     - test -f "${PREFIX}/lib/libcrypt.so.2"  # [not osx]
     - test -f "${PREFIX}/lib/libcrypt.2.dylib"  # [osx]
@@ -70,6 +69,11 @@ about:
   summary: Extended crypt library for descrypt, md5crypt, bcrypt, and others
 
 extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/47182
+    reason: Dependency for systemd
   recipe-maintainers:
+    - ianaobi
+    - bkreider
     - chrisburr
     - mbargull
