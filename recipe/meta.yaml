@@ -28,7 +28,7 @@ requirements:
 
 test:
   commands:
-    - test -f "${PREFIX}/include/crypt.h"
+    - echo $(ls "$PREFIX/include") && test -f "${PREFIX}/include/crypt.h"
     - test -f "${PREFIX}/lib/libcrypt${SHLIB_EXT}"
     - test -f "${PREFIX}/lib/pkgconfig/libxcrypt.pc"
 
@@ -46,6 +46,11 @@ about:
   dev_url: https://github.com/besser82/libxcrypt
 
 extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/47182
+    reason: Dependency for systemd
   recipe-maintainers:
+    - ianaobi
+    - bkreider
     - chrisburr
     - mbargull
